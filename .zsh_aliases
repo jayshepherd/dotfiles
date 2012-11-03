@@ -1,0 +1,7 @@
+alias st='git sourcetree'
+alias cuke='bundle exec cucumber --require=features'
+alias rs='bundle exec rails server'
+alias rc='bundle exec rails console'
+
+alias tmuxpair="if tmux -S /tmp/pair has -t AO-PPS; then reattach-to-user-namespace tmux -S /tmp/pair attach; else reattach-to-user-namespace tmux -S /tmp/pair new -s AO-PPS; fi"
+alias tmuxuser="ssh pair@localhost -t '/usr/local/bin/tmux -S /tmp/pair attach'"
