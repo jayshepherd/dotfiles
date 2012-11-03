@@ -38,9 +38,9 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
 # Make sure homebrew stuff will be first in the path
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
 
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
