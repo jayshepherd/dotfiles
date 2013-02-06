@@ -1,0 +1,7 @@
+[user]
+	name = Jay Shepherd
+	email = jay@sprucecreeksoftware.com
+[github]
+	user = jayshepherd
+[core]
+	editor = /usr/bin/vim

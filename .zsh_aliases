@@ -1,3 +1,4 @@
+alias pcuke='bundle exec parallel_cucumber --require=features'
 alias cuke='bundle exec cucumber --require=features'
 alias rs='bundle exec rails server'
 alias rc='bundle exec rails console'

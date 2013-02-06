@@ -9,7 +9,7 @@ syntax enable
 filetype on
 filetype plugin indent on
 set background=dark
-colorscheme vividchalk
+colorscheme solarized
 
 if has("gui_running")  
   set guifont=Panic\ Sans-Powerline:h13
