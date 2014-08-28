@@ -9,12 +9,15 @@ syntax enable
 filetype on
 filetype plugin indent on
 set background=dark
-colorscheme solarized
+colorscheme twilight
 
 if has("gui_running")  
   set guifont=Panic\ Sans-Powerline:h13
 else
 end
+
+map = :bnext<CR>
+map - :bprevious<CR>
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
@@ -32,6 +35,7 @@ let mapleader = ","
 autocmd VimEnter * NERDTree | wincmd p
 " Close NERDTree if only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <F2> :NERDTreeFocus<CR>
 
 set ruler
 set hidden
@@ -76,6 +80,9 @@ map <C-K> <C-w>k
 map <C-H> <C-w>h
 map <C-L> <C-w>l
 
+set splitbelow
+set splitright
+
 command! -nargs=? -range Align <line1>,<line2>call AlignSection('<args>')
 vnoremap <silent> <Leader>a :Align<CR>
 function! AlignSection(regex) range
@@ -102,3 +109,5 @@ function! AlignLine(line, sep, maxpos, extra)
   return m[1] . spaces . m[2]
 endfunction
 
+set shortmess+=A
+set backupskip=/tmp/*,/private/tmp/*
