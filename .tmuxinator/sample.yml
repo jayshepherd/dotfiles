@@ -1,6 +1,6 @@
 # ~/.tmuxinator/socialcomply.yml
 
-name: arb
+name: sample
 root: ~/
 
 # Optional tmux socket
@@ -12,7 +12,7 @@ root: ~/
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
-pre_window: cd ~/projects/arb
+pre_window: cd ~/projects/sample
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf

@@ -1,9 +1,5 @@
-alias pcuke='bundle exec parallel_cucumber --require=features'
-alias cuke='bundle exec cucumber --require=features'
-alias spin='bundle exec spinach'
 alias rs='bundle exec rails server'
 alias rc='bundle exec rails console'
-alias auto='bundle exec autotest'
 
 alias tmuxpair="if tmux -S /tmp/pair has -t AO-PPS; then reattach-to-user-namespace tmux -S /tmp/pair attach; else reattach-to-user-namespace tmux -S /tmp/pair new -s AO-PPS; fi;chmod 777 /tmp/pair"
 alias tmuxuser="ssh pair@localhost -t '/usr/local/bin/tmux -S /tmp/pair attach'"

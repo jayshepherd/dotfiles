@@ -50,18 +50,8 @@ if [ -f ~/.priv_aliases ]; then
   . ~/.priv_aliases
 fi
 
-export AWS_BLUE_ACCESS_KEY_ID=AKIAIKQF477VEMUNMQQQ
-export AWS_BLUE_SECRET_ACCESS_KEY_ID=+0FjcOIhaBxum3u78pICMIX+HXg6+3WTcgR/vr+j
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-export RM_ENV=development
-export RM_CONSOLE_PATH=liveview-dev
-
-export THIT_ENV=development
-export THIT_TWILIO_ACCOUNT_SID=AC636b59d3be301d1799d876200174e254
-export THIT_TWILIO_AUTH_TOKEN=9d192b7f31d3b2b466b0737777e676b4
 export AUTOFEATURE=true
 PATH=$PATH:/usr/local/share/npm/bin
 
