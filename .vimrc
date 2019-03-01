@@ -9,7 +9,7 @@ syntax enable
 filetype on
 filetype plugin indent on
 set background=dark
-colorscheme twilight
+colorscheme gruvbox
 
 if has("gui_running")  
   set guifont=Panic\ Sans-Powerline:h13
@@ -18,6 +18,8 @@ end
 
 map = :bnext<CR>
 map - :bprevious<CR>
+
+map ` <Esc>
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
@@ -83,31 +85,16 @@ map <C-L> <C-w>l
 set splitbelow
 set splitright
 
-command! -nargs=? -range Align <line1>,<line2>call AlignSection('<args>')
-vnoremap <silent> <Leader>a :Align<CR>
-function! AlignSection(regex) range
-  let extra = 1
-  let sep = empty(a:regex) ? '=' : a:regex
-  let maxpos = 0
-  let section = getline(a:firstline, a:lastline)
-  for line in section
-    let pos = match(line, ' *'.sep)
-    if maxpos < pos
-      let maxpos = pos
-    endif
-  endfor
-  call map(section, 'AlignLine(v:val, sep, maxpos, extra)')
-  call setline(a:firstline, section)
-endfunction
+nnoremap <leader>. :CtrlPTag<cr>
+nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>
 
-function! AlignLine(line, sep, maxpos, extra)
-  let m = matchlist(a:line, '\(.\{-}\) \{-}\('.a:sep.'.*\)')
-  if empty(m)
-    return a:line
-  endif
-  let spaces = repeat(' ', a:maxpos - strlen(m[1]) + a:extra)
-  return m[1] . spaces . m[2]
-endfunction
+vnoremap <silent> <Leader>A :Tab /:\zs<CR>
+vnoremap <silent> <Leader>a :Tab /=<CR>
 
 set shortmess+=A
 set backupskip=/tmp/*,/private/tmp/*
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
